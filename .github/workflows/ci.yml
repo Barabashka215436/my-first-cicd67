@@ -1,21 +1,20 @@
-name: CI for project
+name: CI/CD for Static Website
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  hello-world:
+  deploy:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-  
-      - name: Say Hello
-        run: echo "Hello, Github Actions! This is my first workflow! Бабанина Анна"
-      
-      - name: Show date 
-        run: date
+        
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-ph-pages@v3
+     
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
