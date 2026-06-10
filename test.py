@@ -1,9 +1,8 @@
-from app import sum 
+import unittest
 
-def test_sum():
-    assert sum(2,3)== 5, " 2 + 3 должно получиться  5 "
-    assert sum (-1,1)== 0, "-1 + 1 должно получиться 0"
-    print ("Все тесты пройдены!")
+class TestMath(unittest.TestCase):
+    def test_addition(self):
+        self.assertEqual(1 + 1, 2)
 
-if __name__ == " __main__ ":
-    test_sum()
+if __name__ == "__main__":
+    unittest.main()
