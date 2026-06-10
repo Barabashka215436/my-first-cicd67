@@ -1,8 +1,9 @@
-import unittest
+print("Тест запущен")
 
-class TestMath(unittest.TestCase):
-    def test_addition(self):
-        self.assertEqual(1 + 1, 2)
+def test_simple():
+    assert 1 + 1 == 2
+    print("Тест пройден")
 
 if __name__ == "__main__":
-    unittest.main()
+    test_simple()
+    print("✅ Все проверки успешны")
